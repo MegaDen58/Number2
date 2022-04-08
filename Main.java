@@ -5,9 +5,12 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        String result = "";;
         System.out.print("Введите предложение: ");
         String word = in.nextLine();
+        maxWordLength(word);
+    }
+    public static void maxWordLength(String word){
+        String result = "";;
         int max = 0;
         String[] words = word.split(" ");
         for(String t : words){
@@ -17,7 +20,7 @@ public class Main {
                 result = t;
             }
         }
-        System.out.printf("Максимально длинное слова состоит из %d символа(ов)\nСлово(а): \n", max);
+        System.out.printf("Максимально длинное(ые) слово(а) состоит(ят) из %d символа(ов)\nСлово(а): \n", max);
         for(String t : words){
             if(t.length() == max){
                 result = t;
